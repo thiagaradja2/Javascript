@@ -6,11 +6,11 @@ const WebSocket = require('ws');
 const app = express();
 
 app.use(function (req, res) {
-    res.send({ msg: "hello" });
+    res.send({msg: "hello"});
 });
 
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({server});
 
 wss.on('connection', function connection(ws, req) {
     const location = url.parse(req.url, true);
